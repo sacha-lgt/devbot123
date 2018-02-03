@@ -20,8 +20,7 @@ bot.on('message', message => {
 	if (message.content === prefix + "helpes"){
 		message.channel.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
-	if (message.contact === "Salut"){
-		message.reply("Bien le bonjour !");
-		console.log("Commande Salut effectué");
-	}
+	if (message.content === 'ping') {
+   		message.reply('pong !')
+ 	 }
 });
