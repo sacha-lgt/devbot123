@@ -15,12 +15,22 @@ bot.on('message', message => {
 		message.channel.sendMessage("Liste des commandes:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpes = Have help commands in english");
 	}
 	if (message.content === prefix + "helpfr"){
-		message.channel.sendMessage("Commandes Bot Francaise A Definir !");
+		message.channel.sendMessage("---COMMANDES BOT FR---\n- *web = Lien de redirection vers le site officiel de DevPub !\n- *CONFIRM = Confime toi afin d'obtenir le grade Membre(En cours de dev...)\n- *");
 	}
 	if (message.content === prefix + "helpes"){
 		message.channel.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
 	if (message.content === 'ping') {
    		message.reply('pong !')
- 	 }
+ 	}
+	if (message.content === prefix + "site"){
+		message.channel.sendMessage("Commandes Bot Anglaise A Definir !");
+	}
+	
 });
+bot.on('guildMemberAdd', function (member) {
+    member.createDM().then(function (channel) {
+        return channel.send('Bienvenue sur le channel ! ' + member.displayName)
+ 
+    }).catch(console.error)
+})
