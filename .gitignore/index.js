@@ -16,7 +16,7 @@ bot.on('message', message => {
 	}
 	if (message.content === prefix + "helpfr"){
 		message.author.sendMessage("---COMMANDES BOT FR---\n- *web = Lien de redirection vers le site officiel de DevPub !\n- *CONFIRM = Confime toi afin d'obtenir le grade Membre(En cours de dev...)\n- *");
-		message.reply("Les commandes t'ont été envoyer en mp ; va jeter un coup d'oeil !");
+		message.reply("Les commandes t'ont été envoyé en mp ; va jeter un coup d'oeil !");
 	}
 	if (message.content === prefix + "helpes"){
 		message.author.sendMessage("Commandes Bot Anglaise A Definir !");
