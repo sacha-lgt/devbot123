@@ -12,7 +12,7 @@ bot.login("NDA1MDQ1OTY2OTU4NDkzNzI2.DVdrDQ.ywRFq2JcwR80PRdhrv4Dh7l5qi4");
 
 bot.on('message', message => {
 	if (message.content === prefix + "help"){
-		message.channel.sendMessage("Liste des commandes:-*help");
+		message.channel.sendMessage("Liste des commandes:\n-*help");
 	}
 	if (message.contact === "Salut"){
 		message.reply("Bien le bonjour !");
