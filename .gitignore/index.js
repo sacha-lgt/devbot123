@@ -11,8 +11,8 @@ bot.on('ready', function() {
 bot.login("NDA5Njg4NDY1MDM1NDkzMzc2.DViQDg.r1k_SHvXEO_q6X_azQHT2vjCgUw");
 
 bot.on('message', message => {
-let confirmed = message.channel.guild.roles.find('name', 'confirmed')
-let member = message.channel.guild.members.find('id', message.author.id)
+	let confirmed = message.channel.guild.roles.find('name', 'confirmed')
+	let member = message.channel.guild.members.find('id', message.author.id)
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpes = Have help commands in english");
 	}
@@ -27,6 +27,7 @@ let member = message.channel.guild.members.find('id', message.author.id)
    		message.reply('pong !')
  	}
 	if (message.content === prefix + "confirm"){
+		member.addRole(confirmed);
        		message.reply("test !!");
     	}
 	if (message.content === prefix + "site"){
