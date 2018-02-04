@@ -25,6 +25,7 @@ bot.on('message', message => {
 	}
 	if (message.content === prefix + "confirm"){
 		member.addRole("confirmed");
+		message.reply("Tu es désormais grade confirmer !")
 	}
 	if (message.content === 'ping') {
    		message.reply('pong !')
