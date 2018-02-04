@@ -21,10 +21,6 @@ bot.on('message', message => {
 	if (message.content === prefix + "helpes"){
 		message.author.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
-	if (message.content === prefix + "confirm"){
-		member.addRole("confirmed");
-		message.reply("test !!");
-	}
 	if (message.content === 'ping') {
    		message.reply('pong !')
  	}
