@@ -27,7 +27,6 @@ let member = message.channel.guild.members.find('id', message.author.id)
    		message.reply('pong !')
  	}
 	if (message.content === prefix + "confirm"){
-       	 	member.addRole("confirmed");
        		message.reply("test !!");
     	}
 	if (message.content === prefix + "site"){
