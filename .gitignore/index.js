@@ -2,6 +2,8 @@ const  Discord = require('discord.js');
 const bot = new Discord.Client();
 
 var prefix = ("*")
+let confirmed = message.channel.guild.roles.find('name', 'confirmed')
+let member = message.channel.guild.members.find('id', message.author.id)
 
 bot.on('ready', function() {
 	bot.user.setGame("Commands: *help");
@@ -22,7 +24,7 @@ bot.on('message', message => {
 		message.author.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
 	if (message.content === prefix + "confirm"){
-		member.addRole("Confirmed");
+		member.addRole("confirmed");
 	}
 	if (message.content === 'ping') {
    		message.reply('pong !')
