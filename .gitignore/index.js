@@ -6,7 +6,7 @@ let confirmed = message.channel.guild.roles.find('name', 'confirmed')
 let member = message.channel.guild.members.find('id', message.author.id)
 
 bot.on('ready', function() {
-	bot.user.setGame("Commands: *help");
+	bot.user.setActivity("Commands: *help");
 	console.log("Bot Connected On The Server !");
 });
 
