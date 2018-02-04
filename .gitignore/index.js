@@ -2,8 +2,7 @@ const  Discord = require('discord.js');
 const bot = new Discord.Client();
 
 var prefix = ("*")
-let confirmed = message.channel.guild.roles.find('name', 'confirmed')
-let member = message.channel.guild.members.find('id', message.author.id)
+
 
 bot.on('ready', function() {
 	bot.user.setGame("Commands: *help");
