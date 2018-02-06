@@ -11,16 +11,16 @@ bot.on('ready', function() {
 bot.login("NDA5Njg4NDY1MDM1NDkzMzc2.DViQDg.r1k_SHvXEO_q6X_azQHT2vjCgUw");
 
 bot.on('message', message => {
-	let confirmed = message.channel.guild.roles.find('name', 'confirmed')
+	let confirmed = message.channel.guild.roles.find('name', '✅MEMBERS✅')
 	let member = message.channel.guild.members.find('id', message.author.id)
 	if (message.content === prefix + "help"){
-		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpes = Have help commands in english");
+		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
 	if (message.content === prefix + "helpfr"){
 		message.author.sendMessage("---COMMANDES BOT FR---\n- *web = Lien de redirection vers le site officiel de DevPub !\n- *CONFIRM = Confime toi afin d'obtenir le grade Membre(En cours de dev...)\n- *");
 		message.reply("Les commandes t'ont été envoyé en mp ; va jeter un coup d'oeil !");
 	}
-	if (message.content === prefix + "helpes"){
+	if (message.content === prefix + "helpuk"){
 		message.author.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
 	if (message.content === 'ping') {
@@ -28,7 +28,7 @@ bot.on('message', message => {
  	}
 	if (message.content === prefix + "confirm"){
 		member.addRole(confirmed);
-       		message.reply("test !!");
+       		message.reply("UK:you are now a member so you have access to voice channels FR:Tu es désormais membre tu as donc accé aux channel vocaux ");
     	}
 	if (message.content === prefix + "site"){
 		message.channel.sendMessage("Commandes Bot Anglaise A Definir !");
