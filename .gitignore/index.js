@@ -40,10 +40,5 @@ bot.on('message', message => {
 		message.author.sendMessage("WebSite of DevPub: ....");
 	}		
 });
-bot.on('onGuildMemberAdd', (member) => {
-	let visit = message.channel.guild.roles.find('name', '👨VISITORS👧')
-	let member = message.channel.guild.members.find('id', message.author.id)
-	member.addRole(visit);
-	
-})
+
 
