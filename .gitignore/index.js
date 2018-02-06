@@ -23,6 +23,9 @@ bot.on('message', message => {
 	if (message.content === prefix + "helpuk"){
 		message.author.sendMessage("Commandes Bot Anglaise A Definir !");
 	}
+	if (message.content === prefix + "candidfr"){
+		message.author.sendMessage("Si tu veux");
+	}
 	if (message.content === 'ping') {
    		message.reply('pong !')
  	}
@@ -37,9 +40,11 @@ bot.on('message', message => {
 		message.author.sendMessage("WebSite of DevPub: ....");
 	}		
 });
-bot.on('guildMemberAdd', function (member) {
-    member.createDM().then(function (channel) {
-        return channel.send('Bienvenue sur le channel ! ' + member.displayName)
- 
-    }).catch(console.error)
+bot.on('onGuildMemberAdd', (member) => {
+	let visit = message.channel.guild.roles.find('name', '👨VISITORS👧')
+	let member = message.channel.guild.members.find('id', message.author.id)
+	message.channel.sendMessage("Welcome in the DevPub discord server ! send *help to see commands !")
+	member.addRole(visit);
+	
 })
+
