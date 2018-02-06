@@ -40,11 +40,20 @@ bot.on('message', message => {
 		message.author.sendMessage("WebSite of DevPub: ....");
 	}		
 });
-bot.on('onGuildMemberAdd', (visitor) => {
-	let channel = visitor.guild.channels.find('name', 'welcome')
-	let visit = member.guild.roles.find('name', 'VISITORS')
-	visitor.addRole(visit);
-	channel.send('test');
+bot.on('guildMemberAdd', (visitor) =>
+{
+    let channel = visitor.guild.channels.find('name', 'welcome')
+    let nonMemberRole = visitor.guild.roles.find('name', 'VISITORS')
+ 
+    if (channel)
+    {
+        channel.send('Bienvenue ' + visitor + ' sur le serveur ' + visitor.guild.name + ' !')
+    }
+ 
+    if (nonMemberRole)
+    {
+         visitor.addRole(nonMemberRole)
+    }
 })
 
 
