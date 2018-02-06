@@ -41,8 +41,10 @@ bot.on('message', message => {
 	}		
 });
 bot.on('onGuildMemberAdd', (visitor) => {
+	let channel = visitor.guild.channels.find('name', 'welcome')
 	let visit = member.guild.roles.find('name', 'VISITORS')
 	visitor.addRole(visit);
+	channel.send('test');
 })
 
 
