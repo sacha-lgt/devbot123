@@ -28,7 +28,7 @@ bot.on('message', message => {
  	}
 	if (message.content === prefix + "confirm"){
 		member.addRole(confirmed);
-       		message.reply("\n UK:you are now a member so you have access to voice channels \n FR:Tu es désormais membre tu as donc accé aux channel vocaux ");
+       		message.reply("\nUK:you are now a member so you have access to voice channels \nFR:Tu es désormais membre tu as donc accé aux channel vocaux ");
     	}
 	if (message.content === prefix + "site"){
 		message.channel.sendMessage("Commandes Bot Anglaise A Definir !");
