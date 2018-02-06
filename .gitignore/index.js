@@ -12,7 +12,7 @@ bot.login("NDA5Njg4NDY1MDM1NDkzMzc2.DViQDg.r1k_SHvXEO_q6X_azQHT2vjCgUw");
 
 bot.on('message', message => {
 	let confirmed = message.channel.guild.roles.find('name', '✅MEMBERS✅')
-	let member = message.channel.guild.members.find('id', message.author.id)
+	let membre = message.channel.guild.members.find('id', message.author.id)
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
@@ -30,7 +30,7 @@ bot.on('message', message => {
    		message.reply('pong !')
  	}
 	if (message.content === prefix + "confirm"){
-		member.addRole(confirmed);
+		membre.addRole(confirmed);
        		message.reply("\nUK:you are now a member so you have access to voice channels \nFR:Tu es désormais membre tu as donc accé aux channel vocaux ");
     	}
 	if (message.content === prefix + "site"){
