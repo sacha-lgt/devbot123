@@ -44,7 +44,7 @@ bot.on('onGuildMemberAdd', (member) => {
 	let visit = message.channel.guild.roles.find('name', '👨VISITORS👧')
 	let player = message.channel.guild.members.find('id', guildMemberAdd.author.id)
 	player.addRole(visit);
-	
+	message.channel.sendMessage("testt ! ");
 })
 
 
