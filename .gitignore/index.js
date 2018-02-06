@@ -43,7 +43,6 @@ bot.on('message', message => {
 bot.on('onGuildMemberAdd', (visitor) => {
 	let visit = member.guild.roles.find('name', 'VISITORS')
 	visitor.addRole(visit);
-	message.channel.sendMessage("testt ! ");
 })
 
 
