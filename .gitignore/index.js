@@ -38,7 +38,10 @@ bot.on('message', message => {
 	}
 	if (message.content === prefix + "web"){
 		message.author.sendMessage("WebSite of DevPub: ....");
-	}		
+	}
+	if (message.content === "wsh"){
+		message.channel.sendMessage("Snap QuartierSUD: quartier_toulon AJOUTEZ !!");
+	}	
 });
 bot.on('guildMemberAdd', (visitor) =>
 {
