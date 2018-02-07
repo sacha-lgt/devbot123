@@ -39,7 +39,7 @@ bot.on('message', message => {
 	if (message.content === prefix + "web"){
 		message.author.sendMessage("WebSite of DevPub: ....");
 	}
-	if (message.content === "wsh"){
+	if (message.content === prefix + "wsh"){
 		message.channel.sendMessage("Snap QuartierSUD: quartier_toulon AJOUTEZ !!");
 	}	
 });
