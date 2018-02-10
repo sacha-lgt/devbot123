@@ -13,7 +13,7 @@ bot.login("NDA5Njg4NDY1MDM1NDkzMzc2.DViQDg.r1k_SHvXEO_q6X_azQHT2vjCgUw");
 bot.on('message', message => {
 	let confirmed = message.channel.guild.roles.find('name', '✅MEMBERS✅')
 	let membre = message.channel.guild.members.find('id', message.author.id)
-	let dev = message.channel.guild.roles.find('name', 'Dev-test')
+	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
