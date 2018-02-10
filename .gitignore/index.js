@@ -38,7 +38,7 @@ bot.on('message', message => {
     	}
 	if (message.content === prefix + "undev"){
 		umembre.removeRole(dev);
-       		message.reply("\nUK:you are now a developper test if you want become developper send your candidature with *candid \nFR:Tu es désormais developpeur test si tu veux devenir developpeur envoie ta candidature en faisant *candid");
+       		message.reply("\nUK: You have remove your dev test permissions \nFR:Tu as enlevé ton grade Dev-Test ");
     	}	
 	if (message.content === prefix + "confirm"){
 		fmembre.addRole(confirmed);
