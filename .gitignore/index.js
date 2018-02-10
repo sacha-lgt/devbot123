@@ -15,6 +15,7 @@ bot.on('message', message => {
 	let membre = message.channel.guild.members.find('id', message.author.id)
 	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
+	let umembre = message.channel.guild.members.find('id', message.author.id)
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
@@ -34,7 +35,11 @@ bot.on('message', message => {
 	if (message.content === prefix + "dev"){
 		membre.addRole(dev);
        		message.reply("\nUK:you are now a developper test if you want become developper send your candidature with *candid \nFR:Tu es désormais developpeur test si tu veux devenir developpeur envoie ta candidature en faisant *candid");
-    }
+    	}
+	if (message.content === prefix + "undev"){
+		umembre.removeRole(dev);
+       		message.reply("\nUK:you are now a developper test if you want become developper send your candidature with *candid \nFR:Tu es désormais developpeur test si tu veux devenir developpeur envoie ta candidature en faisant *candid");
+    	}	
 	if (message.content === prefix + "confirm"){
 		fmembre.addRole(confirmed);
        		message.reply("\nUK:you are now a member so you have access to voice channels \nFR:Tu es désormais membre tu as donc accé aux channel vocaux ");
