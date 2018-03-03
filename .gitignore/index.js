@@ -8,7 +8,7 @@ bot.on('ready', function() {
 	console.log("Bot Connected On The Server !");
 });
 
-bot.login("NDA5Njg4NDY1MDM1NDkzMzc2.DViQDg.r1k_SHvXEO_q6X_azQHT2vjCgUw");
+bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
 	let confirmed = message.channel.guild.roles.find('name', '✅MEMBERS✅')
