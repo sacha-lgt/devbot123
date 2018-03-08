@@ -28,14 +28,13 @@ bot.on('message', message => {
   	if(message.content === prefix + "botinfos"){	
     	let bicon = bot.user.displayAvatarURL;
     	let botembed = new Discord.RichEmbed()
-    	.setDescription(
+    	.setDescription("Bot descrption")
     	.setColor("#15f153")
     	.setThumbnail(bicon)
-	.addFiel("Bot Description")
     	.addField("Bot Name", bot.user.username)
-    	.addField("Created On", bot.user.createdAt)
-	)
-	.setFooter(By skqh_)
+	.addField("Created On", bot.user.createdAt)
+	.setFooter("By skqh_")
+	
 	
     	return message.channel.send(botembed);
   	}
