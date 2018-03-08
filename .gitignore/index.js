@@ -25,21 +25,17 @@ bot.on('message', message => {
 	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
 	let umembre = message.channel.guild.members.find('id', message.author.id)
-  	if(message.content === prefix + "botinfos"){
-	let days = Math.floor(time / 86400)
-    	time %= 86400
-    	let hours = Math.floor(time / 3600)
-    	time %= 3600
-    	let minutes = Math.floor(time / 60)
-    	let seconds = Math.floor(time % 60)	
+  	if(message.content === prefix + "botinfos"){	
     	let bicon = bot.user.displayAvatarURL;
     	let botembed = new Discord.RichEmbed()
-    	.setDescription("Bot Information")
+    	.setDescription(
     	.setColor("#15f153")
     	.setThumbnail(bicon)
+	.addFiel("Bot Description")
     	.addField("Bot Name", bot.user.username)
     	.addField("Created On", bot.user.createdAt)
-	.addField("Connected since", days + ' jours, ' + hours + ' heures, ' + minutes + ' minutes et ' + seconds + ' secondes')
+	)
+	.setFooter(By skqh_)
 	
     	return message.channel.send(botembed);
   	}
