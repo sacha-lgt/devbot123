@@ -25,34 +25,18 @@ bot.on('message', message => {
 	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
 	let umembre = message.channel.guild.members.find('id', message.author.id)
-	if(message.content === prefix + "kick"){
+  	if(message.content === prefix + "botinfos"){
 
-    	//!kick @daeshan askin for it
+    	let bicon = bot.user.displayAvatarURL;
+    	let botembed = new Discord.RichEmbed()
+    	.setDescription("Bot Information")
+    	.setColor("#15f153")
+    	.setThumbnail(bicon)
+    	.addField("Bot Name", bot.user.username)
+    	.addField("Created On", bot.user.createdAt);
 
-    	let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    	if(!kUser) return message.channel.send("Can't find user!");
-    	let kReason = args.join(" ").slice(22);
-    	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
-    	if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
-
-    	let kickEmbed = new Discord.RichEmbed()
-    	.setDescription("~Kick~")
-    	.setColor("#e56b00")
-    	.addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    	.addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    	.addField("Kicked In", message.channel)
-    	.addField("Tiime", message.createdAt)
-    	.addField("Reason", kReason);
-
-    	let kickChannel = message.guild.channels.find(`name`, "incidents");
-   	if(!kickChannel) return message.channel.send("Can't find incidents channel.");
-
-    	message.guild.member(kUser).kick(kReason);
-    	kickChannel.send(kickEmbed);
-
-    	return;
+    	return message.channel.send(botembed);
   	}
-
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
