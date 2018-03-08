@@ -25,9 +25,7 @@ bot.on('message', message => {
 	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
 	let umembre = message.channel.guild.members.find('id', message.author.id)
-	let messageArray = message.content.split(" ");
-  	let cmd = messageArray[0];
-	if(cmd === `${prefix}kick`){
+	if(message.content === prefix + "kick"){
 
     	//!kick @daeshan askin for it
 
