@@ -1,3 +1,4 @@
+const fs = require('fs');
 const  Discord = require('discord.js');
 const bot = new Discord.Client();
 
@@ -8,7 +9,15 @@ bot.on('ready', function() {
 	console.log("Bot Connected On The Server !");
 });
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.TOKEN)
+    .then(() =>
+    {
+        console.log(`The bot ${bot.user.username} is now connected on the discord server`)
+    })
+    .catch(() =>
+    {
+        console.error('The token is not valid ')
+    })
 
 bot.on('message', message => {
 	let confirmed = message.channel.guild.roles.find('name', '✅MEMBERS✅')
@@ -16,6 +25,31 @@ bot.on('message', message => {
 	let dev = message.channel.guild.roles.find('name', 'DEV-TEST')
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
 	let umembre = message.channel.guild.members.find('id', message.author.id)
+	if (message.content === prefix + "kick"){
+		let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+		if (!kUser) return message.channel.send("Can't find this user !");
+		let lReason = args.join(" ").slice(22);
+		if(!message.memeber.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal !");
+		if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked !");
+
+		let kickEmbed = new Discord.RichEmbed()
+		.setDescription("-KICK-")
+		.setColor("#207375")
+		.addField("Kicked User", `${kUser} with ID ${kUser.id}`)
+		.addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+		.addField("Kicked In", message.channel)
+		.addField("Time", message.createdAt)
+		.addField("Reason", kReason);
+
+		let kickChannel = message.guild.channels.find(`name`, "incidents");
+		if(!kickChannel) return message.channel.send("Can't find incidents channel");
+
+		message.guild.memner(kUser).kick(kReason)
+		kickChannel.send(kickEmbed);
+
+		return;
+	}
+
 	if (message.content === prefix + "help"){
 		message.channel.sendMessage("Commands:\n- *helpfr = Avoir les commandes d'aide en francais\n- *helpuk = Have help commands in english");
 	}
@@ -46,8 +80,9 @@ bot.on('message', message => {
     }
 	if (message.content === prefix + "web"){
 		message.author.sendMessage("WebSite of DevPub: ....");
-	}		
-});
+	}
+	if(message.content === prefix + "ban  ")
+	
 bot.on('guildMemberAdd', (visitor) =>
 {
     let channel = visitor.guild.channels.find('name', 'welcome')
@@ -62,4 +97,4 @@ bot.on('guildMemberAdd', (visitor) =>
     {
          visitor.addRole(nonMemberRole)
     }
-})
+})})
