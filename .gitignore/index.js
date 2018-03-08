@@ -34,7 +34,7 @@ bot.on('message', message => {
     	.setThumbnail(bicon)
     	.addField("Bot Name", bot.user.username)
     	.addField("Created On", bot.user.createdAt);
-	.addField("Connected since", Utils.formatTime(Date.now() / 1000 - target.joinedTimestamp / 1000))			
+	.addField("Connected since", utils.formatTime(Date.now() / 1000 - target.joinedTimestamp / 1000))			
 	)
 	.setFooter("By skqh_");
 	
