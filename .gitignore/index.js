@@ -26,21 +26,13 @@ bot.on('message', message => {
 	let fmembre = message.channel.guild.members.find('id', message.author.id)
 	let umembre = message.channel.guild.members.find('id', message.author.id)
   	if(message.content === prefix + "botinfos"){
-	let days = Math.floor(time / 86400)
-        time %= 86400
-        let hours = Math.floor(time / 3600)
-        time %= 3600
-        let minutes = Math.floor(time / 60)
-        let seconds = Math.floor(time % 60)
-
     	let bicon = bot.user.displayAvatarURL;
     	let botembed = new Discord.RichEmbed()
     	.setDescription("Bot Information"
     	.setColor("#15f153")
     	.setThumbnail(bicon)
     	.addField("Bot Name", bot.user.username)
-    	.addField("Created On", bot.user.createdAt);
-	.addField("Connected since", days + ' jours, ' + hours + ' heures, ' + minutes + ' minutes et ' + seconds + ' secondes'(Date.now() / 1000 - target.joinedTimestamp / 1000))			
+    	.addField("Created On", bot.user.createdAt);			
 	)
 	.setFooter("By skqh_");
 	
