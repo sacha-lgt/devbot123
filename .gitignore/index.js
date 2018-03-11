@@ -65,11 +65,24 @@ bot.on('message', message => {
 	if (message.content === prefix + "confirm"){
 		fmembre.addRole(confirmed);
        		message.reply("\nUK:you are now a member so you have access to voice channels \nFR:Tu es désormais membre tu as donc accé aux channel vocaux ");
-    }
+    	}
 	if (message.content === prefix + "web"){
 		message.author.sendMessage("WebSite of DevPub: ....");
 	}
-	if(message.content === prefix + "ban  ")
+	if(message.content === prefix + "servinfos"){
+
+    	let sicon = message.guild.iconURL;
+   	let serverembed = new Discord.RichEmbed()
+    	.setDescription("Server Informations")
+    	.setColor("#15f153")
+    	.setThumbnail(sicon)
+    	.addField("Server Name", message.guild.name)
+    	.addField("Created On", message.guild.createdAt)
+    	.addField("You Joined", message.member.joinedAt)
+    	.addField("Total Members", message.guild.memberCount);
+
+    	return message.channel.send(serverembed);
+  }
 	
 bot.on('guildMemberAdd', (visitor) =>
 {
